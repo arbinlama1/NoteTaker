@@ -1,19 +1,23 @@
 import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
-    value: 0,
+    pastes:localStorage.getItem("pastes")
+    ? JSON.parse(localStorage.getItem("pastes"))
+    :[]
 }
 
 export const pastSlice = createSlice ({
-    name: "myPast",
+    name: "paste",
     initialState,
     reducers: {
-        increment: (state) => {
-            state.value += 1;
+        addToPastes: (state, actions) => {
         },
-        decrement: (state) => {
-            state.value -= 1;
+        updateToPastes: (state, actions) => {
+        },
+        resetAllPastes: (state, actions) => {
+        },
+        removeFromPastes: (state, actions) => {
         }
     }
 })
-export const { increment, decrement} = pastSlice.actions;
+export const { addToPastes, updateToPastes, resetAllPastes, removeFromPastes} = pastSlice.actions;
 export default pastSlice.reducer;
