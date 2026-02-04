@@ -10,6 +10,10 @@ export const pastSlice = createSlice ({
     initialState,
     reducers: {
         addToPastes: (state, actions) => {
+            const paste = actions.payload;
+            state.pastes.push(paste);
+            localStorage.setItem("pastes",state.pastes);
+            Toast
         },
         updateToPastes: (state, actions) => {
         },
